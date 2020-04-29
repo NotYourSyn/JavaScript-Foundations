@@ -127,7 +127,22 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
-
+variableInterestRate = (P,I,N,creditScore) => {
+    const name = 'Chris';
+     if(creditScore > 740){
+        I -= (I * .5) / 100;
+    }else if(creditScore < 660){
+        I += (I * .5) / 100;
+    }
+    let mIrate = I/12;
+    let per = N*12
+    let numer = P*mIrate*(Math.pow(1+mIrate,per));
+    let denom = (Math.pow(1+mIrate,per)-1);
+    let monthlyRate = numer/denom;
+    monthlyRate = monthlyRate.toFixed(2);
+   
+     return `${monthlyRate}`;
+ }
 
 
 
