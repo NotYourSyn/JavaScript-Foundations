@@ -43,7 +43,7 @@ console.log('Monthly Rate:'+ monthlyRate.toFixed(2));
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
-function mortgageCalculator(P,I,N) {
+function mortgageCalculator() {
     let prin = 200000;
     let iRate = 0.05;
     let yrs= 30;
@@ -80,7 +80,7 @@ mortgageCalculator = (P,I,N) => {
     monthlyRate = monthlyRate.toFixed(2);
     return `${monthlyRate}`;
  }
-}
+
 
 mortgageCalculator(200000,0.05,30);
 
@@ -89,6 +89,25 @@ mortgageCalculator(200000,0.05,30);
 
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
+mortgageCalculator = (P,I,N,creditScore) => {
+    const name = 'Chris';
+     if(creditScore > 740){
+        I -= (I * .5) / 100;
+    }else if(creditScore < 660){
+        I += (I * .5) / 100;
+    }
+    let mIrate = I/12;
+    let per = N*12
+    let numer = P*mIrate*(Math.pow(1+mIrate,per));
+    let denom = (Math.pow(1+mIrate,per)-1);
+    let monthlyRate = numer/denom;
+    monthlyRate = monthlyRate.toFixed(2);
+   
+     return `${monthlyRate}`;
+ }
+
+
+mortgageCalculator(200000,0.05,30,750);
 
 
 
