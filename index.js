@@ -47,7 +47,7 @@ function mortgageCalculator(P,I,N) {
     let prin = 200000;
     let iRate = 0.05;
     let yrs= 30;
-    const name = 'Chris'
+    const name = 'Chris';
     let mIrate = iRate/12;
     let per = yrs*12
     let numer = prin*mIrate*(Math.pow(1+mIrate,per));
@@ -71,10 +71,18 @@ mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
 
 mortgageCalculator = (P,I,N) => {
-    
+    const name = 'Chris';
+    let mIrate = I/12;
+    let per = N*12
+    let numer = P*mIrate*(Math.pow(1+mIrate,per));
+    let denom = (Math.pow(1+mIrate,per)-1);
+    let monthlyRate = numer/denom;
+    monthlyRate = monthlyRate.toFixed(2);
+    return `${monthlyRate}`;
+ }
 }
 
-
+mortgageCalculator(200000,0.05,30);
 
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
