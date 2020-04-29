@@ -34,7 +34,7 @@ When your math is correct, monthlyRate will equal 1073.64
 let numerator =  principal*monthlyInterestRate*(Math.pow(1+monthlyInterestRate,periods));
 let denominator = (Math.pow(1+monthlyInterestRate,periods)-1);
 let monthlyRate = numerator/denominator;
-console.log('Monthly Rate:'+ monthlyRate);
+console.log('Monthly Rate:'+ monthlyRate.toFixed(2));
 
 
 
@@ -53,6 +53,7 @@ function mortgageCalculator() {
     let numer = prin*mIrate*(Math.pow(1+mIrate,per));
     let denom = (Math.pow(1+mIrate,per)-1);
     let monthlyRate = numer/denom;
+    monthlyRate = monthlyRate.toFixed(2);
     return `${name}, your monthly rate is ${monthlyRate}`;
  }
  
