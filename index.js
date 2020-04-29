@@ -18,8 +18,8 @@ Create a variable called `monthlyInterestRate` and give it the value of interest
 
 Create another variable called `periods` and give it the value of years*12.
 */
-
-
+let monthlyInterestRate = interestRate/12;
+let periods = years*12;
 
 
 // 🏡 Task 2: Harder Math
@@ -31,7 +31,10 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
-
+let numerator =  principal*monthlyInterestRate*(Math.pow(1+monthlyInterestRate,periods));
+let denominator = (Math.pow(1+monthlyInterestRate,periods)-1);
+let monthlyRate = numerator/denominator;
+console.log('Monthly Rate:'+ monthlyRate);
 
 
 
@@ -40,7 +43,21 @@ When your math is correct, monthlyRate will equal 1073.64
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
-
+function mortgageCalculator() {
+    let prin = 200000;
+    let iRate = 0.05;
+    let yrs= 30;
+    const name = 'Chris'
+    let mIrate = iRate/12;
+    let per = yrs*12
+    let numer = prin*mIrate*(Math.pow(1+mIrate,per));
+    let denom = (Math.pow(1+mIrate,per)-1);
+    let monthlyRate = numer/denom;
+    return `${name}, your monthly rate is ${monthlyRate}`;
+ }
+ 
+ mortgageCalculator();
+ 
 
 
 
