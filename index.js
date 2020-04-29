@@ -43,7 +43,7 @@ console.log('Monthly Rate:'+ monthlyRate.toFixed(2));
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
-function mortgageCalculator() {
+function mortgageCalculator(P,I,N) {
     let prin = 200000;
     let iRate = 0.05;
     let yrs= 30;
@@ -70,7 +70,9 @@ For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
 
-
+mortgageCalculator = (P,I,N) => {
+    
+}
 
 
 
