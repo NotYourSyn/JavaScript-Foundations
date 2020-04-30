@@ -90,7 +90,6 @@ mortgageCalculator(200000,0.05,30);
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 mortgageCalculator = (P,I,N,creditScore) => {
-    const name = 'Chris';
      if(creditScore > 740){
         I -= (I * .5) / 100;
     }else if(creditScore < 660){
